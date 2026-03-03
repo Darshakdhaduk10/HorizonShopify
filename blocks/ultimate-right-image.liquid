@@ -1,0 +1,33 @@
+<!-- ULTIMATE RIGHT IMAGE COLUMN -->
+<div class="col-12 col-md-3">
+  <div class="side-box bg-light d-flex align-items-end justify-content-center" {{ block.shopify_attributes }}>
+    {% if block.settings.image != blank %}
+      <img
+        src="{{ block.settings.image | image_url: width: 600 }}"
+        alt="right-model"
+        width=""
+        height=""
+        class="img-fluid obj-none obj-po-butt">
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ultimate Right Image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ultimate Right Image"
+    }
+  ]
+}
+{% endschema %}
+

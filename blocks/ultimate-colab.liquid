@@ -1,0 +1,55 @@
+<!-- ULTIMATE COLAB BLOCK -->
+<div class="colab col-12 d-flex justify-content-between flex-wrap py-82 mx-w-83 mt-27 h-100" {{ block.shopify_attributes }}>
+
+    {% for i in (1..5) %}
+      {% assign image_key = 'image_' | append: i %}
+      {% if block.settings[image_key] != blank %}
+        <img
+          src="{{ block.settings[image_key] | image_url: width: 300 }}"
+          alt="colab-image-{{ i }}"
+          width=""
+          height=""
+          class="img-fluid obj-contain">
+      {% endif %}
+    {% endfor %}
+  
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Ultimate Colab",
+    "tag": null,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Colab Image 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Colab Image 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Colab Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_4",
+        "label": "Colab Image 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_5",
+        "label": "Colab Image 5"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Ultimate Colab"
+      }
+    ]
+  }
+  {% endschema %}

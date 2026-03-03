@@ -1,0 +1,35 @@
+<div class="col-xl-7 col-12" {{ block.shopify_attributes }}>
+    <div class="swiper dealSwiper h-580">
+      <div class="swiper-wrapper">
+  
+        {% for i in (1..5) %}
+          {% assign img = block.settings['image_' | append: i] %}
+          {% if img != blank %}
+            <div class="swiper-slide">
+              <img src="{{ img | image_url: width: 800 }}" class="img-fluid">
+            </div>
+          {% endif %}
+        {% endfor %}
+  
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Deal Slider",
+    "settings": [
+      { "type": "image_picker", "id": "image_1", "label": "Slide Image 1" },
+      { "type": "image_picker", "id": "image_2", "label": "Slide Image 2" },
+      { "type": "image_picker", "id": "image_3", "label": "Slide Image 3" },
+      { "type": "image_picker", "id": "image_4", "label": "Slide Image 4" },
+      { "type": "image_picker", "id": "image_5", "label": "Slide Image 5" }
+    ],
+    "presets": [
+      {
+        "name": "Deal Slider"
+      }
+    ]
+  }
+  {% endschema %}

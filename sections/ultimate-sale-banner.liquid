@@ -1,0 +1,23 @@
+  <section class="ultimate-wrapper py-5">
+    <div class="container">
+      <div class="row align-item-normal justify-content-center">
+  
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+  
+      </div>
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Ultimate Wrapper Banner",
+    "blocks": [
+      { "type": "@theme" }
+    ],
+    "presets": [
+      { "name": "Ultimate Wrapper Banner" }
+    ]
+  }
+  {% endschema %}
