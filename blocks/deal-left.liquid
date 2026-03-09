@@ -1,219 +1,152 @@
-{% comment %} <div class="col-12 col-xl-3">
-    <div class="left-deal-timer" {{ block.shopify_attributes }}>
+<!-- DEALS OF THE MONTH LEFT COLUMN -->
+<div class="col-12 col-xl-3">
+  <div class="left-deal-timer" {{ block.shopify_attributes }}>
 
-        <h2 class="fs-46 mb-4 text-center text-start-xl-start">
-            {{ block.settings.heading }}
-        </h2>
+    {% liquid
+      assign heading_value = block.settings.heading | default: block.settings.title | default: 'Deals Of The Month'
+      assign sub_text_value = block.settings.sub_text | default: block.settings.subtext | default: "Hurry, Before It’s Too Late!"
+    %}
 
-        <p class="fs-16 mb-4 font-poppins text-center text-start-xl-start">
-            {{ block.settings.description }}
-        </p>
-
-        <div class="d-flex justify-content-center justify-content-xl-start">
-            <a href="{{ block.settings.button_link }}" class="btn-primary mb-5">
-                {{ block.settings.button_text }}
-            </a>
-        </div>
-
-        <p class="font-poppins fs-28 mb-4 text-center text-start-xl-start">
-            {{ block.settings.timer_text }}
-        </p>
-
-        <div class="timer-btns d-flex justify-content-center justify-content-xl-start flex-wrap">
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">02</span>
-                </div>
-                <span class="fs-24 font-poppins">Days</span>
-            </div>
-
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">06</span>
-                </div>
-                <span class="fs-24 font-poppins">Hr</span>
-            </div>
-
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">05</span>
-                </div>
-                <span class="fs-24 font-poppins">Mins</span>
-            </div>
-
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">30</span>
-                </div>
-                <span class="fs-24 font-poppins">Sec</span>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-{% schema %}
-{
-  "name": "Deal Left Content",
-  "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Deals Of The Month" },
-    { "type": "textarea", "id": "description", "label": "Description" },
-    { "type": "text", "id": "button_text", "label": "Button Text", "default": "Buy Now" },
-    { "type": "url", "id": "button_link", "label": "Button Link" },
-    { "type": "text", "id": "timer_text", "label": "Timer Text", "default": "Hurry, Before It’s Too Late!" }
-  ]
-}
-{% endschema %} {% endcomment %}
-
-
-
-
-
-
-
-
-
-
-{% comment %} <div class="col-12 col-xl-3">
-    <div class="left-deal-timer" {{ block.shopify_attributes }}>
-
-        <h2 class="fs-46 mb-4 text-center text-start-xl-start">
-            {{ block.settings.heading }}
-        </h2>
-
-        <p class="fs-16 mb-4 font-poppins text-center text-start-xl-start">
-            {{ block.settings.description }}
-        </p>
-
-        <div class="d-flex justify-content-center justify-content-xl-start">
-            <a href="{{ block.settings.button_link }}" class="btn-primary mb-5">
-                {{ block.settings.button_text }}
-            </a>
-        </div>
-
-        <p class="font-poppins fs-28 mb-4 text-center text-start-xl-start">
-            {{ block.settings.timer_text }}
-        </p>
-
-        <div class="timer-btns d-flex justify-content-center justify-content-xl-start flex-wrap">
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">02</span>
-                </div>
-                <span class="fs-24 font-poppins">Days</span>
-            </div>
-
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">06</span>
-                </div>
-                <span class="fs-24 font-poppins">Hr</span>
-            </div>
-
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">05</span>
-                </div>
-                <span class="fs-24 font-poppins">Mins</span>
-            </div>
-
-            <div class="timer-1 d-flex flex-column align-items-center">
-                <div class="timer-time bg-white mb-3">
-                    <span class="fs-32 font-poppins">30</span>
-                </div>
-                <span class="fs-24 font-poppins">Sec</span>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-{% schema %}
-{
-  "name": "Deal Left Content",
-  "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Deals Of The Month" },
-    { "type": "textarea", "id": "description", "label": "Description" },
-    { "type": "text", "id": "button_text", "label": "Button Text", "default": "Buy Now" },
-    { "type": "url", "id": "button_link", "label": "Button Link" },
-    { "type": "text", "id": "timer_text", "label": "Timer Text", "default": "Hurry, Before It’s Too Late!" }
-  ]
-}
-{% endschema %} {% endcomment %}
-
-
-
-<div class="col-12 col-xl-3" {{ block.shopify_attributes }}>
-    <h2>{{ block.settings.heading }}</h2>
-    <p>{{ block.settings.description }}</p>
-  </div><div class="col-12 col-xl-3" {{ block.shopify_attributes }}>
-    <div class="left-deal-timer">
-  
-      <h2 class="fs-46 mb-4 text-center text-start-xl-start">
-        {{ block.settings.heading }}
+    {% if heading_value != blank %}
+      <h2 class="fs-46 mb-4 text-center text-start-xl-start" style="--color: var(--color-foreground);">
+        {{ heading_value }}
       </h2>
-  
-      <p class="fs-16 mb-4 font-poppins text-center text-start-xl-start">
-        {{ block.settings.description }}
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <p class="fs-16 mb-4 font-poppins text-center text-start-xl-start line-height-26">
+       {{ block.settings.description }}
       </p>
-  
-      <div class="d-flex justify-content-center justify-content-xl-start">
-        <button class="btn-primary mb-5">
+    {% endif %}
+
+    <div class="d-flex justify-content-center justify-content-xl-start">
+      {% if block.settings.button_text != blank %}
+        <a href="{{ block.settings.button_link }}" class="btn-primary mb-5">
           {{ block.settings.button_text }}
-        </button>
-      </div>
-  
-      <p class="font-poppins fs-28 mb-4 text-center text-start-xl-start">
-        {{ block.settings.notice }}
-      </p>
-  
-      <!-- TIMER SAME -->
-      <div class="timer-btns d-flex justify-content-center justify-content-xl-start flex-wrap">
-        {% for i in (1..4) %}
-          <div class="timer-1 d-flex flex-column align-items-center">
-            <div class="timer-time bg-white mb-3">
-              <span class="fs-32 font-poppins">00</span>
-            </div>
-            <span class="fs-24 font-poppins">Unit</span>
-          </div>
-        {% endfor %}
-      </div>
-  
+        </a>
+      {% endif %}
     </div>
+
+    {% if sub_text_value != blank %}
+      <p class="font-poppins fs-28 mb-4 text-center text-start-xl-start" style="--color: var(--color-foreground);">
+        {{ sub_text_value }}
+      </p>
+    {% endif %}
+
+    <!-- TIMER SAME REHSE -->
+    <div class="timer-btns d-flex justify-content-center justify-content-xl-start flex-wrap">
+
+      <div class="timer-1 d-flex flex-column align-items-center">
+        <div class="timer-time bg-white mb-3">
+          <span class="fs-5 font-poppins">
+            {{ block.settings.days }}
+          </span>
+        </div>
+        <span class="fs-24 font-poppins">
+          Days
+        </span>
+      </div>
+
+      <div class="timer-1 d-flex flex-column align-items-center">
+        <div class="timer-time bg-white mb-3">
+          <span class="fs-5 font-poppins">
+            {{ block.settings.hours }}
+          </span>
+        </div>
+        <span class="fs-24 font-poppins">
+          Hr
+        </span>
+      </div>
+
+      <div class="timer-1 d-flex flex-column align-items-center">
+        <div class="timer-time bg-white mb-3">
+          <span class="fs-5 font-poppins">
+            {{ block.settings.minutes }}
+          </span>
+        </div>
+        <span class="fs-24 font-poppins">
+          Mins
+        </span> 
+      </div>
+
+      <div class="timer-1 d-flex flex-column align-items-center">
+        <div class="timer-time bg-white mb-3">
+          <span class="fs-5 font-poppins">
+            {{ block.settings.seconds }}
+          </span>
+        </div>
+        <span class="fs-24 font-poppins">
+          Sec
+        </span>
+      </div>
+
+    </div>
+
   </div>
-  
-  {% schema %}
-  {
-    "name": "Deal Left Content",
-    "settings": [
-      {
-        "type": "text",
-        "id": "heading",
-        "label": "Heading",
-        "default": "Deals Of The Month"
-      },
-      {
-        "type": "textarea",
-        "id": "description",
-        "label": "Description"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Button Text",
-        "default": "Buy Now"
-      },
-      {
-        "type": "text",
-        "id": "notice",
-        "label": "Bottom Text",
-        "default": "Hurry, Before It’s Too Late!"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Deal Left Content"
-      }
-    ]
-  }
-  {% endschema %}
+</div>
+
+{% schema %}
+{
+  "name": "Deals Left Timer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Deals Of The Month"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "sub_text",
+      "label": "Sub Text",
+      "default": "Hurry, Before It’s Too Late!"
+    },
+    {
+      "type": "text",
+      "id": "days",
+      "label": "Days",
+      "default": "02"
+    },
+    {
+      "type": "text",
+      "id": "hours",
+      "label": "Hours",
+      "default": "06"
+    },
+    {
+      "type": "text",
+      "id": "minutes",
+      "label": "Minutes",
+      "default": "05"
+    },
+    {
+      "type": "text",
+      "id": "seconds",
+      "label": "Seconds",
+      "default": "30"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Left Deal"
+    }
+  ]
+}
+{% endschema %}

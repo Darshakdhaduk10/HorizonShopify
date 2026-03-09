@@ -1,0 +1,21 @@
+<section class="py-5">
+    <div class="row">
+
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+  
+    </div>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Follow Us Section",
+    "blocks": [
+      { "type": "@theme" }
+    ],
+    "presets": [
+      { "name": "Follow Us Section" }
+    ]
+  }
+  {% endschema %}

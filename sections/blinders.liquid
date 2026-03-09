@@ -1,0 +1,24 @@
+<section class="py-5">
+   
+    <div class="row">
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+    </div>
+    
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Blinders",
+  "blocks": [
+    { "type": "@theme" }
+  ],
+  "presets": [
+    {
+      "name": "Blinders Section"
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,101 @@
+<!-- blocks/right-blinders-content.liquid - Shopify Block Divs REMOVED -->
+<div class="col-12 col-xl-5 bg-light-gray d-flex flex-column justify-content-center py-5 py-xl-0">
+    {% if block.settings.subtitle %}
+      <p class="fs-16 font-poppins mb-20">{{ block.settings.subtitle }}</p>
+    {% endif %}
+    
+    {% if block.settings.title %}
+      <h2 class="fs-46 mb-20">{{ block.settings.title }}</h2>
+    {% endif %}
+    
+    {% if block.settings.short_description %}
+      <p class="fs-16 font-poppins mb-20">{{ block.settings.short_description }}</p>
+    {% endif %}
+    
+    {% if block.settings.description %}
+      <p class="fs-16 font-poppins mw-60 mb-20">{{ block.settings.description }}</p>
+    {% endif %}
+    
+    {% if block.settings.size_text %}
+      <p class="font-poppins mb-20 fs-16">{{ block.settings.size_text }}</p>
+    {% endif %}
+    
+    {% if block.settings.price %}
+      <p class="font-poppins fs-28">{{ block.settings.price }}</p>
+    {% endif %}
+    
+    {% if block.settings.show_button %}
+      <div class="mt-5">
+        <a href="{{ block.settings.button_link }}" class="btn-primary">
+          {{ block.settings.button_text | default: 'Buy Now' }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Right Blinders Content",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Women Collection"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Main Title",
+        "default": "Peaky Blinders"
+      },
+      {
+        "type": "text",
+        "id": "short_description",
+        "label": "Short Description",
+        "default": "DESCRIPTION"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Main Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem."
+      },
+      {
+        "type": "text",
+        "id": "size_text",
+        "label": "Size Text",
+        "default": "Size:"
+      },
+      {
+        "type": "text",
+        "id": "price",
+        "label": "Price",
+        "default": "$100.00"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_button",
+        "label": "Show Buy Button",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Buy Now"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Right Blinders Content"
+      }
+    ]
+  }
+  {% endschema %}
+  

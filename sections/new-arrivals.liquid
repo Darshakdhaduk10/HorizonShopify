@@ -1,0 +1,41 @@
+  <section class="py-5">
+    {% for block in section.blocks %}
+      {% render block %}
+    {% endfor %}
+  </section>
+
+  {% comment %} Global Blocks Support {% endcomment %}
+ 
+
+{% comment %} </div> {% endcomment %}
+
+{% schema %}
+{
+  "name": "New Arrivals",
+  "tag": "section",
+  "class": "new-arrivals-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin"
+    }
+  ],
+  "blocks": [
+    { "type": "@theme" }
+  ],
+  "presets": [
+    {
+      "name": "New Arrivals"
+    }
+  ]
+}
+{% endschema %}
+

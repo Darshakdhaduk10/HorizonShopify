@@ -1,0 +1,179 @@
+<!-- blocks/image-grid-block.liquid - FULL COPY-PASTE READY -->
+<div class="row align-items-center">
+    {% if block.settings.image1 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image1_size }}">
+          {{ block.settings.image1 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  
+    {% if block.settings.image2 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image2_size }}">
+          {{ block.settings.image2 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  
+    {% if block.settings.image3 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image3_size }}">
+          {{ block.settings.image3 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  
+    {% if block.settings.image4 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image4_size }}">
+          {{ block.settings.image4 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  
+    {% if block.settings.image5 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image5_size }}">
+          {{ block.settings.image5 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  
+    {% if block.settings.image6 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image6_size }}">
+          {{ block.settings.image6 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  
+    {% if block.settings.image7 %}
+      <div class="col-6 col-md-4 col-lg">
+        <div class="fashion-img {{ block.settings.image7_size }}">
+          {{ block.settings.image7 | image_url: width: 600 | image_tag: loading: 'lazy', class: 'img-fluid w-100 d-block' }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Image Grid Block",
+    "tag": "div",
+    "class": "image-grid-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image 1"
+      },
+      {
+        "type": "select",
+        "id": "image1_size",
+        "label": "Image 1 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "small-img"
+      },
+      {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image 2"
+      },
+      {
+        "type": "select",
+        "id": "image2_size",
+        "label": "Image 2 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "big-img"
+      },
+      {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Image 3"
+      },
+      {
+        "type": "select",
+        "id": "image3_size",
+        "label": "Image 3 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "small-img"
+      },
+      {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Image 4"
+      },
+      {
+        "type": "select",
+        "id": "image4_size",
+        "label": "Image 4 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "big-img"
+      },
+      {
+        "type": "image_picker",
+        "id": "image5",
+        "label": "Image 5"
+      },
+      {
+        "type": "select",
+        "id": "image5_size",
+        "label": "Image 5 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "small-img"
+      },
+      {
+        "type": "image_picker",
+        "id": "image6",
+        "label": "Image 6"
+      },
+      {
+        "type": "select",
+        "id": "image6_size",
+        "label": "Image 6 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "big-img"
+      },
+      {
+        "type": "image_picker",
+        "id": "image7",
+        "label": "Image 7"
+      },
+      {
+        "type": "select",
+        "id": "image7_size",
+        "label": "Image 7 Size",
+        "options": [
+          { "value": "small-img", "label": "Small" },
+          { "value": "big-img", "label": "Big" }
+        ],
+        "default": "small-img"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Grid Block"
+      }
+    ]
+  }
+  {% endschema %}
+  

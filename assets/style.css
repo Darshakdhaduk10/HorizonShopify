@@ -1,129 +1,10 @@
- /* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
-.row {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.align-item-stretch {
-  align-items: stretch;
-}
-.fs-91 {
-  font-size: 91px;
-}
-.fs-187 {
-  font-size: 187px;
-}
-.fs-20 {
-  font-size: 20px;
-}
-.px-36 {
-  padding-left: 36px;
-  padding-right: 36px;
-}
-.flex-1 {
-  flex: 1;
-}
-.gap-32 {
-  gap: 32px;
-}
-.obj-none {
-  object-fit: none;
-}
-.obj-contain {
-  object-fit: contain;
-}
-.obj-po-butt {
-  object-position: bottom;
-}
-.align-item-normal {
-  align-items: normal;
-}
-.mb-19 {
-  margin-bottom: 19px;
-}
-.mb-37 {
-  margin-bottom: 37px;
-}
-.mt-10 {
-  margin-top: 10px;
-}
-
-.ultimate-wrapper {
-  width: 100%;
-}
-.side-box {
-  background: #e9e9e9;
-  border-radius: 12px;
-  height: 100%;
-  padding-top: 40px;
-}
-
-.center-box {
-  padding: 0 32px;
-}
-
-.ultimate-heading {
-  font-size: 91px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #555;
-}
-
-.ultimate-heading span {
-  font-size: 187px;
-  font-weight: 700;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 2px #555;
-}
-
-@media (min-width: 768px) {
-
-  .center-box {
-    min-height: 600px;
-    justify-content: center;
-  }
-
-  .ultimate-heading {
-    font-size: 70px;
-  }
-
-  .ultimate-heading span {
-    font-size: 140px;
-  }
-}
-
-
-@media (min-width: 1200px) {
-
-  .center-box {
-    min-height: 750px;
-  }
-
-  .ultimate-heading {
-    font-size: 91px;
-  }
-
-  .ultimate-heading span {
-    font-size: 187px;
-  }
-} */
-
-
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.shopify-block {
+  display: contents !important;
 }
 .container {
   max-width: 1920px;
@@ -246,6 +127,11 @@
   box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.16);
 }
 
+/* Remove extra Shopify block wrapper impact inside deals row */
+.timer-bg .shopify-block {
+  display: contents;
+}
+
 
 
 
@@ -310,9 +196,308 @@
 }
 
 
+/* New - Arrivals - Section */
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.product-item {
+  width: 100%;
+  /* 122px = 61px + 61px (2 gaps between 3 items) */
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Category buttons styles */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  background: #FAFAFA;
+  /* border: 2px solid #e9ecef; */
+  color: #8A8A8A;
+  padding: 20px 48px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cat-btn.active {
+  background: #000000;
+  color: white;
+}
+
+/* Hide all category products by default */
+.category-products {
+  display: none;
+}
+
+.category-products.active {
+  display: block;
+}
+
+.view-more-btn {
+  background: #000;
+  color: #fff;
+  padding: 20px 63px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-more-btn:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+}
 
 
+/* Women - Collection Section */
+/* fc */
+.fc-callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 
+.fc-dot {
+  position: absolute;
+  top: 17px;
+  left: 46%;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+}
+.fc-svg {
+  position: absolute;
+  top: -7px;
+  right: 38%;
+  width: 16%;
+  height: 26%;
+}
+.fc-svg polyline {
+  stroke: #1a1a1a;
+  stroke-width: 1.4;
+  fill: none;
+}
+.fc-label {
+  position: absolute;
+  right: 33%;
+  top: 15%;
+  transform: translateY(-50%);
+  border: 1.5px solid #1a1a1a;
+  padding: 7px 20px;
+  background: #f7f6f4;
+  pointer-events: all;
+}
+
+/* hb - */
+.hb-callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.hb-dot {
+  position: absolute;
+  top: 35%;
+  left: 42%;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+}
+.hb-svg {
+  position: absolute;
+  top: 31%;
+  right: 42%;
+  width: 16%;
+  height: 26%;
+}
+.hb-svg polyline {
+  stroke: #1a1a1a;
+  stroke-width: 1.4;
+  fill: none;
+}
+.hb-label {
+  position: absolute;
+  right: 36%;
+  top: 47%;
+  transform: translateY(-50%);
+  border: 1.5px solid #1a1a1a;
+  padding: 7px 20px;
+  background: #f7f6f4;
+  pointer-events: all;
+}
+
+/* st - */
+.st-callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.st-dot {
+  position: absolute;
+  bottom: 13%;
+  left: 43%;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+}
+.st-svg {
+  position: absolute;
+  bottom: -28px;
+  right: 41%;
+  width: 16%;
+  height: 26%;
+}
+.st-svg polyline {
+  stroke: #1a1a1a;
+  stroke-width: 1.4;
+  fill: none;
+}
+.st-label {
+  position: absolute;
+  right: 37%;
+  bottom: 0;
+  transform: translateY(-50%);
+  border: 1.5px solid #1a1a1a;
+  padding: 7px 20px;
+  background: #f7f6f4;
+  pointer-events: all;
+}
+
+/* sp - */
+.sp-callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.sp-dot {
+  position: absolute;
+  top: 23%;
+  left: 40%;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+}
+.sp-svg {
+  position: absolute;
+  bottom: 51%;
+  right: 60%;
+  width: 16%;
+  height: 26%;
+}
+.sp-svg polyline {
+  stroke: #1a1a1a;
+  stroke-width: 1.4;
+  fill: none;
+}
+.sp-label {
+  position: absolute;
+  left: 14%;
+  top: 35%;
+  transform: translateY(-50%);
+  border: 1.5px solid #1a1a1a;
+  padding: 7px 20px;
+  background: #f7f6f4;
+  pointer-events: all;
+}
+
+/* hu - */
+.hu-callout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.hu-dot {
+  position: absolute;
+  top: 52%;
+  left: 36%;
+  width: 21px;
+  height: 21px;
+  border: 1.5px solid #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 50%;
+}
+.hu-svg {
+  position: absolute;
+  bottom: 22%;
+  right: 64%;
+  width: 16%;
+  height: 26%;
+}
+.hu-svg polyline {
+  stroke: #1a1a1a;
+  stroke-width: 1.4;
+  fill: none;
+}
+.hu-label {
+  position: absolute;
+  left: 9%;
+  top: 64%;
+  transform: translateY(-50%);
+  border: 1.5px solid #1a1a1a;
+  padding: 7px 20px;
+  background: #f7f6f4;
+  pointer-events: all;
+}
+
+/* Follow - Section */
+.fashion-img img{
+  width:100%;
+  object-fit:cover;
+}
+
+.small-img img,
+.big-img img{
+  height:180px;
+}
 
 
 

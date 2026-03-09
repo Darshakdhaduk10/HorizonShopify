@@ -16,6 +16,21 @@
 .bg-white {
     background-color: #FFFFFF;
 }
+.bg-gray {
+    background-color: #E0E0E0;
+}
 .footer-bg {
     background-color: #224F34;
+}
+.bg-black {
+    background-color: #000000;
+}
+.timer-bg {
+    background-color: #FEFEFE;
+}
+.bg-light-gray {
+    background-color: #DADADA;
+}
+.background-color {
+    background-color: #F8F8F8;
 }

@@ -1,0 +1,132 @@
+<!-- blocks/category-products.liquid -->
+<div class="container" {{ block.shopify_attributes }}>
+  {% assign collections_list = block.settings.collections | compact %}
+
+  {% if collections_list.size > 0 %}
+    <!-- Buttons -->
+    <div class="categories w-100 d-flex justify-content-center mb-5">
+      {% for collection in collections_list %}
+        {% if collection and collection.products_count > 0 %}
+          <button
+            class="cat-btn font-popins fs-16 {% if forloop.first %}active{% endif %}"
+            data-category="cat-{{ forloop.index0 }}"
+          >
+            {{ collection.title }}
+          </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Products -->
+    {% for collection in collections_list %}
+      {% if collection and collection.products_count > 0 %}
+        <div id="cat-{{ forloop.index0 }}" class="category-products {% if forloop.first %}active{% endif %}">
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <div class="product-row">
+                {% for product in collection.products limit: 9 %}
+                  <div class="product-item">
+                    <div class="product-card">
+                      <div class="product-img">
+                        <a href="{{ product.url }}" class="d-flex justify-content-center">
+                          <img
+                            src="{{ product.featured_image | image_url: width: 400 }}"
+                            class="d-block w-100"
+                            alt="{{ product.title | escape }}"
+                            width=""
+                            height=""
+                            loading="lazy"
+                          >
+                        </a>
+                      </div>
+                      <div class="product-content">
+                        <h5 class="mb-0 font-poppins fs-20 mb-2 fw-medium pt-3">{{ product.title | escape }}</h5>
+                        <p class="font-poppins mb-4 fs-16">{{ product.vendor | escape }}</p>
+                        <p class="font-poppins fs-16 mb-4">
+                          ({{ product.metafields.custom.reviews_rating_count | default: 0 }}) Customer Reviews
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                          <h6 class="mb-0 font-poppins fs-24 fw-medium">{{ product.price | money }}</h6>
+                          {% if product.available -%}
+                            <span class="font-poppins fs-12 text-red">Limited Stock</span>
+                          {%- else -%}
+                            <span class="font-poppins fs-12 text-red">Sold Out</span>
+                          {%- endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                {% else %}
+                  <div class="col-12 text-center py-5">
+                    <p>No products available in this collection</p>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <div class="d-flex justify-content-center mt-5 pt-4">
+                <a href="{{ collection.url }}" class="view-more-btn">
+                  View More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    <div class="text-center py-5">
+      <p>Please select collections in the section settings</p>
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const catBtns = document.querySelectorAll('.cat-btn');
+    const categoryProducts = document.querySelectorAll('.category-products');
+
+    catBtns.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        const category = this.getAttribute('data-category');
+
+        catBtns.forEach((b) => b.classList.remove('active'));
+        categoryProducts.forEach((cp) => cp.classList.remove('active'));
+
+        this.classList.add('active');
+        const targetCategory = document.getElementById(category);
+        if (targetCategory) {
+          targetCategory.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Category Products",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collections",
+      "label": "Select Collections",
+      "info": "Select up to 5 collections for category tabs"
+    },
+    {
+      "type": "range",
+      "id": "products_per_collection",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "default": 6,
+      "label": "Products per collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Products"
+    }
+  ]
+}
+{% endschema %}

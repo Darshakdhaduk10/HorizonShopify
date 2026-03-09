@@ -1,35 +1,108 @@
+{% comment %}
+  Deal Slider Block (Right Side Swiper)
+{% endcomment %}
+
+{% assign slider_id = 'dealSwiper-' | append: block.id %}
+
 <div class="col-xl-7 col-12" {{ block.shopify_attributes }}>
-    <div class="swiper dealSwiper h-580">
-      <div class="swiper-wrapper">
-  
-        {% for i in (1..5) %}
-          {% assign img = block.settings['image_' | append: i] %}
-          {% if img != blank %}
-            <div class="swiper-slide">
-              <img src="{{ img | image_url: width: 800 }}" class="img-fluid">
-            </div>
-          {% endif %}
-        {% endfor %}
-  
-      </div>
-      <div class="swiper-pagination"></div>
+  <div class="swiper dealSwiper h-580" id="{{ slider_id }}">
+    <div class="swiper-wrapper">
+      {% for i in (1..block.settings.slides_count) %}
+        {% assign img_key = 'slide_image_' | append: i %}
+        {% if block.settings[img_key] != blank %}
+          <div class="swiper-slide">
+            <img
+              src="{{ block.settings[img_key] | image_url: width: 800 }}"
+              class="img-fluid"
+              alt="deal-slide"
+            width = ""
+          height="">
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
+
+    <div class="swiper-pagination"></div>
   </div>
-  
-  {% schema %}
-  {
-    "name": "Deal Slider",
-    "settings": [
-      { "type": "image_picker", "id": "image_1", "label": "Slide Image 1" },
-      { "type": "image_picker", "id": "image_2", "label": "Slide Image 2" },
-      { "type": "image_picker", "id": "image_3", "label": "Slide Image 3" },
-      { "type": "image_picker", "id": "image_4", "label": "Slide Image 4" },
-      { "type": "image_picker", "id": "image_5", "label": "Slide Image 5" }
-    ],
-    "presets": [
-      {
-        "name": "Deal Slider"
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper("#{{ slider_id }}", {
+      slidesPerView: 2.5,
+      spaceBetween: 24,
+      loop: true,
+
+      pagination: {
+        el: "#{{ slider_id }} .swiper-pagination",
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      breakpoints: {
+        0: { slidesPerView: 1, spaceBetween: 30 },
+        576: { slidesPerView: 1.5 },
+        768: { slidesPerView: 2.5, spaceBetween: 32 },
+        992: { spaceBetween: 40 },
+        1200: { slidesPerView: 2.5, spaceBetween: 24 }
       }
-    ]
-  }
-  {% endschema %}
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Deal Slider",
+  "tag": null,
+  "settings": [
+    {
+      "type": "range",
+      "id": "slides_count",
+      "label": "Number of slides",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_image_1",
+      "label": "Slide Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_image_2",
+      "label": "Slide Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_image_3",
+      "label": "Slide Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_image_4",
+      "label": "Slide Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_image_5",
+      "label": "Slide Image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_image_6",
+      "label": "Slide Image 6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Deal Slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,138 @@
+<!-- blocks/supports-block.liquid -->
+<div class="col-12 d-flex justify-content-center py-5" {{ block.shopify_attributes }}>
+  <div class="d-flex justify-content-center gap-4 flex-wrap col-12">
+    
+    <!-- Feature 1 -->
+    <div class="feature-item d-flex align-items-center gap-3 col-2">
+      <svg width="51" height="50" viewBox="0 0 51 50" fill="none">
+        {{ block.settings.svg1 }}
+      </svg>
+      <div>
+        <p class="font-poppins fs-16 mb-1">{{ block.settings.title1 }}</p>
+        <p class="font-poppins fs-16">{{ block.settings.subtitle1 }}</p>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-item d-flex align-items-center gap-3 col-2">
+      <svg width="51" height="50" viewBox="0 0 51 50" fill="none">
+        {{ block.settings.svg2 }}
+      </svg>
+      <div>
+        <p class="font-poppins fs-16 mb-1">{{ block.settings.title2 }}</p>
+        <p class="font-poppins fs-16">{{ block.settings.subtitle2 }}</p>
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-item d-flex align-items-center gap-3 col-2">
+      <svg width="51" height="50" viewBox="0 0 51 50" fill="none">
+        {{ block.settings.svg3 }}
+      </svg>
+      <div>
+        <p class="font-poppins fs-16 mb-1">{{ block.settings.title3 }}</p>
+        <p class="font-poppins fs-16">{{ block.settings.subtitle3 }}</p>
+      </div>
+    </div>
+
+    <!-- Feature 4 -->
+    <div class="feature-item d-flex align-items-center gap-3 col-2">
+      <svg width="51" height="50" viewBox="0 0 51 50" fill="none">
+        {{ block.settings.svg4 }}
+      </svg>
+      <div>
+        <p class="font-poppins fs-16 mb-1">{{ block.settings.title4 }}</p>
+        <p class="font-poppins fs-16">{{ block.settings.subtitle4 }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Supports Block",
+  "tag": "div",
+  "class": "col-12 d-flex justify-content-center py-5",
+  "settings": [
+
+    {
+      "type": "textarea",
+      "id": "svg1",
+      "label": "Feature 1 SVG"
+    },
+    {
+      "type": "text",
+      "id": "title1",
+      "label": "Feature 1 Title",
+      "default": "High Quality"
+    },
+    {
+      "type": "text",
+      "id": "subtitle1",
+      "label": "Feature 1 Subtitle",
+      "default": "crafted from top materials"
+    },
+
+    {
+      "type": "textarea",
+      "id": "svg2",
+      "label": "Feature 2 SVG"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Feature 2 Title",
+      "default": "Warranty Protection"
+    },
+    {
+      "type": "text",
+      "id": "subtitle2",
+      "label": "Feature 2 Subtitle",
+      "default": "Over 2 years"
+    },
+
+    {
+      "type": "textarea",
+      "id": "svg3",
+      "label": "Feature 3 SVG"
+    },
+    {
+      "type": "text",
+      "id": "title3",
+      "label": "Feature 3 Title",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "subtitle3",
+      "label": "Feature 3 Subtitle",
+      "default": "Order over 150 $"
+    },
+
+    {
+      "type": "textarea",
+      "id": "svg4",
+      "label": "Feature 4 SVG"
+    },
+    {
+      "type": "text",
+      "id": "title4",
+      "label": "Feature 4 Title",
+      "default": "24/7 Support"
+    },
+    {
+      "type": "text",
+      "id": "subtitle4",
+      "label": "Feature 4 Subtitle",
+      "default": "Dedicated support"
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Supports Block"
+    }
+  ]
+}
+{% endschema %}

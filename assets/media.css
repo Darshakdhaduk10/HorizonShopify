@@ -1,0 +1,70 @@
+/* Your default mobile styles here */
+
+@media (min-width: 576px) {
+  .dealSwiper .swiper-slide-active img {
+    height: 540px;
+  }
+
+  .fs-16 {
+  font-size: 16px;
+}
+}
+
+@media (min-width: 768px) {
+  .dealSwiper .swiper-slide-active img {
+    height: 580px;
+  }
+
+    .product-row {
+    gap: 40px;
+  }
+
+  .product-item {
+    width: calc((100% - 40px) / 2);
+  }
+
+  .small-img img,
+.big-img img{
+    height:240px;
+}
+}
+
+@media (min-width: 992px) {
+  /* ≥992px styles */
+    .small-img img{
+    height:220px;
+} 
+  .big-img img{
+    height:300px;
+}
+}
+
+@media (min-width: 1200px) {
+  .product-row {
+    gap: 61px;
+  }
+
+  /* 👇 IMPORTANT PART */
+  .product-item {
+    width: calc((100% - 122px) / 3);
+  }
+
+  .women-box{
+    background-color: #DADADA;
+  }
+  .women-box img{
+    background-color: #DADADA;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* ≥1400px styles */
+}
+
+@media (min-width: 1600px) {
+  /* ≥1600px styles */
+}
+
+@media (min-width: 1920px) {
+  /* ≥1920px styles (Your main design) */
+}

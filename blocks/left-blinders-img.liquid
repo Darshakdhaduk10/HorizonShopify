@@ -1,0 +1,111 @@
+<!-- blocks/left-blinders-img.liquid - Shopify Block Divs REMOVED -->
+<div class="col-12 col-xl-7 women-box background-color" style="position: relative;">
+  {% if block.settings.image %}
+    <img src="{{ block.settings.image | image_url: width: 1200 }}" class="img-bg d-block img-fluid background-color" alt="{{ block.settings.image.alt | escape }}">
+  {% else %}
+    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+  {% endif %}
+
+  <!-- fc -->
+  <div class="fc-callout">
+    <div class="fc-dot bg-gray"></div>
+    <svg class="fc-svg" viewBox="0 0 400 300" preserveAspectRatio="none">
+      <polyline points="55,70 200,70 255,120" />
+    </svg>
+    <div class="fc-label">
+      <div class="fc-brand fs-16 font-poppins">{{ block.settings.fc_brand }}</div>
+    </div>
+  </div>
+
+  <!-- hb -->
+  <div class="hb-callout">
+    <div class="hb-dot bg-gray"></div>
+    <svg class="hb-svg" viewBox="0 0 400 300" preserveAspectRatio="none">
+      <polyline points="55,70 200,70 255,120" />
+    </svg>
+    <div class="hb-label">
+      <div class="hb-brand fs-16 font-poppins">{{ block.settings.hb_brand }}</div>
+    </div>
+  </div>
+
+  <!-- st -->
+  <div class="st-callout">
+    <div class="st-dot bg-gray"></div>
+    <svg class="st-svg" viewBox="0 0 400 300" preserveAspectRatio="none">
+      <polyline points="55,70 200,70 255,120" />
+    </svg>
+    <div class="st-label">
+      <div class="st-brand fs-16 font-poppins">{{ block.settings.st_brand }}</div>
+    </div>
+  </div>
+
+  <!-- sp -->
+  <div class="sp-callout">
+    <div class="sp-dot bg-gray"></div>
+    <svg class="sp-svg" viewBox="0 0 400 300" preserveAspectRatio="none">
+      <polyline points="33,75 78,20 415,20" stroke="#1a1a1a" stroke-width="1.5" fill="none" />
+    </svg>
+    <div class="sp-label">
+      <div class="sp-brand fs-16 font-poppins">{{ block.settings.sp_brand }}</div>
+    </div>
+  </div>
+
+  <!-- hu -->
+  <div class="hu-callout">
+    <div class="hu-dot bg-gray"></div>
+    <svg class="hu-svg" viewBox="0 0 400 300" preserveAspectRatio="none">
+      <polyline points="33,75 78,20 415,20" stroke="#1a1a1a" stroke-width="1.5" fill="none" />
+    </svg>
+    <div class="hu-label">
+      <div class="hu-brand fs-16 font-poppins">{{ block.settings.hu_brand }}</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Left Blinders Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "fc_brand",
+      "label": "FC Brand Text",
+      "default": "Flate Cap"
+    },
+    {
+      "type": "text",
+      "id": "hb_brand",
+      "label": "HB Brand Text",
+      "default": "Hugo Boss"
+    },
+    {
+      "type": "text",
+      "id": "st_brand",
+      "label": "ST Brand Text",
+      "default": "Santoni"
+    },
+    {
+      "type": "text",
+      "id": "sp_brand",
+      "label": "SP Brand Text",
+      "default": "Suspender"
+    },
+    {
+      "type": "text",
+      "id": "hu_brand",
+      "label": "HU Brand Text",
+      "default": "Hugo Boss"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Left Blinders Image"
+    }
+  ]
+}
+{% endschema %}

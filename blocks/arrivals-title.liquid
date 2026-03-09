@@ -1,0 +1,45 @@
+<div class="container" {{ block.shopify_attributes }}>
+    <div class="aarrivals-title d-block">
+
+        {% if block.settings.title != blank %}
+            <h2 class="mb-4 text-center fs-46">
+                {{ block.settings.title }}
+            </h2>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+            <div class="w-100 d-flex justify-content-center">
+                <p class="font-poppins line-height-26 mb-4 mw-30 text-center fs-16">
+                    {{ block.settings.description }}
+                </p>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Arrivals Title",
+  "tag": null,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Arrivals Title"
+    }
+  ]
+}
+{% endschema %}

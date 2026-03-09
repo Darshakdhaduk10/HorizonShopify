@@ -1,5 +1,5 @@
-.mx-w-83 {
-  max-width: 83.4%;
+.h-580 {
+  height: 580px;
 }
 .w-25 {
     width: 25% !important;
@@ -23,6 +23,12 @@
   
   .mw-100 {
     max-width: 100% !important;
+  }
+  .mw-30 {
+    max-width: 30%;
+  }
+    .mw-60 {
+    max-width: 60%;
   }
   
   .vw-100 {
