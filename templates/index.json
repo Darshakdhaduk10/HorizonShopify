@@ -291,18 +291,6 @@
     "ultimate_sale_banner_9XTXgc": {
       "type": "ultimate-sale-banner",
       "blocks": {
-        "ultimate_colab_gGMT8U": {
-          "type": "ultimate-colab",
-          "name": "Ultimate Colab",
-          "settings": {
-            "image_1": "shopify://shop_images/logo_5.png",
-            "image_2": "shopify://shop_images/logo_3.png",
-            "image_3": "shopify://shop_images/logo_4.png",
-            "image_4": "shopify://shop_images/logo_2.png",
-            "image_5": "shopify://shop_images/colab-1.png"
-          },
-          "blocks": {}
-        },
         "ultimate_left_image_dFC88z": {
           "type": "ultimate-left-image",
           "name": "Ultimate Left Image",
@@ -332,13 +320,25 @@
             "image": "shopify://shop_images/image_227.png"
           },
           "blocks": {}
+        },
+        "ultimate_colab_gGMT8U": {
+          "type": "ultimate-colab",
+          "name": "Ultimate Colab",
+          "settings": {
+            "image_1": "shopify://shop_images/logo_5.png",
+            "image_2": "shopify://shop_images/logo_3.png",
+            "image_3": "shopify://shop_images/logo_4.png",
+            "image_4": "shopify://shop_images/logo_2.png",
+            "image_5": "shopify://shop_images/colab-1.png"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ultimate_colab_gGMT8U",
         "ultimate_left_image_dFC88z",
         "ultimate_center_content_abVCtj",
-        "ultimate_right_image_yBmwiH"
+        "ultimate_right_image_yBmwiH",
+        "ultimate_colab_gGMT8U"
       ],
       "name": "Ultimate Wrapper Banner",
       "settings": {}
